@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Project Details</h1>
+        <nav>
+            <a href="index.html">← Back to Resume</a>
+        </nav>
+    </header>
+
+    <section id="project1-info">
+        <h2 id="project-title">Project Title</h2>
+        <p id="project-description">Project description will be loaded here...</p>
+    </section>
+
+    <script>
+        // Get project details from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const project = urlParams.get('project');
+
+        // Define project details (You can extend this with more projects)
+        const projects = {
+            "project1": {
+                title: "Project 1",
+                description: "This is a detailed description of Project 1."
+            },
+            "project2": {
+                title: "Project 2",
+                description: "This is a detailed description of Project 2."
+            }
+        };
+
+        // Update the page content dynamically
+        if (project && projects[project]) {
+            document.getElementById('project-title').innerText = projects[project].title;
+            document.getElementById('project-description').innerText = projects[project].description;
+        } else {
+            document.getElementById('project-info').innerHTML = "<p>Project not found.</p>";
+        }
+    </script>
+</body>
+</html>
