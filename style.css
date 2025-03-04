@@ -28,7 +28,7 @@ header {
     align-items: center;
 }
 #skills ul {
-    display:grid;  /* Arrange skills in a row */
+    display:block;  /* Arrange skills in a row */
     flex-wrap: wrap; /* Wrap to next line if needed */
     justify-content: center; /* Center align */
     gap: 15px;  /* Adds space between skills */
